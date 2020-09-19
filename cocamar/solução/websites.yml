@@ -1,0 +1,25 @@
+lagarta:
+  - wikidata: https://www.wikidata.org/wiki/Q4774594
+  - commons: https://commons.wikimedia.org/wiki/Category:Anticarsia_gemmatalis
+  - bugguide: https://bugguide.net/node/view/7413/bgimage
+percevejo_marrom:
+  - wikidata: https://www.wikidata.org/wiki/Q10348502
+  - commons: Category:Euschistus heros
+  - inaturalist: https://www.inaturalist.org/taxa/544061-Euschistus-heros/browse_photos
+percevejo_pequeno:
+  - wikidata: https://www.wikidata.org/wiki/Q55307403
+  - commons: https://commons.wikimedia.org/wiki/Category:Nezara_viridula
+  - bugguide: https://bugguide.net/node/view/19047
+  - inaturalist: https://www.inaturalist.org/taxa/141725-Nezara-viridula
+  - inpn: https://inpn.mnhn.fr/espece/cd_nom/238461
+  - eppo: https://gd.eppo.int/taxon/NEZAVI/photos
+  - cabi: https://www.cabi.org/isc/datasheet/36282#toPictures
+  - gbif: https://www.gbif.org/occurrence/gallery?taxon_key=2078852
+  - academic: https://academic.microsoft.com/topic/2781191031/publication/search?q=Nezara%20viridula&qe=And(Composite(F.FId%253D2781191031)%252CTy%253D%270%27)&f=&orderBy=0
+  - nederlandsesoorten: https://www.nederlandsesoorten.nl/linnaeus_ng/app/views/species/nsr_taxon.php?id=173695&cat=CTAB_MEDIA
+percevejo_verde:
+  - wikidata: https://www.wikidata.org/wiki/Q10631594
+  - bugguide: https://bugguide.net/node/view/8725
+  - eol: https://eol.org/pages/608266/media
+  - gbif: https://www.gbif.org/occurrence/gallery?taxon_key=2078823
+  - inaturalist: https://www.inaturalist.org/taxa/330167-Piezodorus-guildinii/browse_photos
