@@ -1,0 +1,693 @@
+{
+  "intents": [
+    {
+      "intent": "Finalizacao",
+      "examples": [
+        {
+          "text": "A gente se fala outro dia"
+        },
+        {
+          "text": "Até a próxima"
+        },
+        {
+          "text": "Até logo!"
+        },
+        {
+          "text": "Até mais!"
+        },
+        {
+          "text": "até qualquer hora dessas"
+        },
+        {
+          "text": "Era só o que eu precisava. Valeu!"
+        },
+        {
+          "text": "falows"
+        },
+        {
+          "text": "Muitíssimo obrigado! Vou nessa!"
+        },
+        {
+          "text": "Obrigado, por hoje é só isso!"
+        },
+        {
+          "text": "Ok, era só isso mesmo"
+        },
+        {
+          "text": "Ok. Muito obrigado."
+        },
+        {
+          "text": "OK, obrigado"
+        },
+        {
+          "text": "Preciso ir agora!"
+        },
+        {
+          "text": "Tchau"
+        },
+        {
+          "text": "Tenha uma boa noite!"
+        },
+        {
+          "text": "Tenha uma ótima semana!"
+        },
+        {
+          "text": "Tenha um bom dia!"
+        },
+        {
+          "text": "Tenha um bom fim de semana!"
+        },
+        {
+          "text": "Tenho que ir. Falous!"
+        },
+        {
+          "text": "Uma boa tarde pra ti"
+        },
+        {
+          "text": "Um abraço"
+        },
+        {
+          "text": "Um bom dia para você!"
+        },
+        {
+          "text": "Valeu!"
+        },
+        {
+          "text": "Valeus Falous"
+        },
+        {
+          "text": "Vou nessa!"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "Saque",
+      "examples": [
+        {
+          "text": "Alguma loja de conveniência aqui perto tem caixa eletrônico?"
+        },
+        {
+          "text": "Como faço para chegar no caixa eletrônico mais próximo?"
+        },
+        {
+          "text": "Em que rua tem um mercado com ATM?"
+        },
+        {
+          "text": "Está disponível um caixa eletrônico em algum ponto de comércio desse bairro?"
+        },
+        {
+          "text": "Estou com pouco dinheiro no bolso e gosto de ter uns trocados, onde fica o caixa eletrônico mais próximo?"
+        },
+        {
+          "text": "Estou muito longe de um caixa eletrônico ou tem um próximo daqui?"
+        },
+        {
+          "text": "Eu gostaria de tirar uns 200 reais o mais rápido possível. Onde tem caixa?"
+        },
+        {
+          "text": "Há algum ATM por aqui?"
+        },
+        {
+          "text": "Me diz onde fica o caixa de auto-atendimento mais próximo, por favor"
+        },
+        {
+          "text": "Não tenho grana"
+        },
+        {
+          "text": "Nessa rua tem caixa?"
+        },
+        {
+          "text": "Onde consigo cem pila?"
+        },
+        {
+          "text": "Onde encontro um caixa eletrônico?"
+        },
+        {
+          "text": "Onde fica o caixa eletrônico máis perto daqui?"
+        },
+        {
+          "text": "Onde tem um 24 horas por aqui?"
+        },
+        {
+          "text": "Onde tem um ATM, por favor?"
+        },
+        {
+          "text": "Onde tem um banco 24h?"
+        },
+        {
+          "text": "Para onde devo ir pra sacar dinheiro em uma loja de conveniência?"
+        },
+        {
+          "text": "Por acaso alguma fármácia dessa região tem caixa eletrônico?"
+        },
+        {
+          "text": "Preciso de grana"
+        },
+        {
+          "text": "Preciso de um Banco24Horas"
+        },
+        {
+          "text": "Preciso ir ao mercado mas estou sem dinheiro. Há algum supermercado com caixa eletrônico aqui perto?"
+        },
+        {
+          "text": "preciso sacar dinheiro"
+        },
+        {
+          "text": "Quais padarias têm caixa 24 horas nesta região?"
+        },
+        {
+          "text": "Queria um caixa eletrônico, mas a distância tem que ser pequena. Sabe de algum?"
+        },
+        {
+          "text": "Quero encontrar um caixa eletrônico. Pode me ajudar?"
+        },
+        {
+          "text": "Quero muito tirar dinheiro. Onde tem um ATM?"
+        },
+        {
+          "text": "Quero retirar dinheiro, onde tem?"
+        },
+        {
+          "text": "Quero sacar dinheiro mas não sei onde. Pode me ajudar?"
+        },
+        {
+          "text": "Quero sacar dinheiro. Se for perto de uma farmácia, seria ainda melhor, pois assim não preciso ir em outro lugar depois"
+        },
+        {
+          "text": "Que rua eu pego para ir até o caixa mais próximo?"
+        },
+        {
+          "text": "Sabe me dizer se tem algum caixa eletrônico aqui perto?"
+        },
+        {
+          "text": "saque"
+        },
+        {
+          "text": "Surgiu um imprevisto financeiro e preciso fazer um saque agora. Onde tem um caixa?"
+        },
+        {
+          "text": "tem alguma farmácia por perto pra eu sacar 170 reais agora?"
+        },
+        {
+          "text": "Tem algum comércio aqui perto onde eu possa sacar dinheiro a qualquer hora?"
+        },
+        {
+          "text": "Tem caixa caixa eletrônico perto dessa esquina?"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "Saudacao",
+      "examples": [
+        {
+          "text": "Boa noite!"
+        },
+        {
+          "text": "Boa tarde!"
+        },
+        {
+          "text": "Bom dia!"
+        },
+        {
+          "text": "E aí?"
+        },
+        {
+          "text": "Ei, me responde uma coisa:"
+        },
+        {
+          "text": "Oi"
+        },
+        {
+          "text": "Oi, como vai?"
+        },
+        {
+          "text": "Oi, tudo bem?"
+        },
+        {
+          "text": "Oi, você fala português?"
+        },
+        {
+          "text": "Olá!"
+        },
+        {
+          "text": "Olá, tenho uma dúvida"
+        },
+        {
+          "text": "Olá, tudo bem?"
+        },
+        {
+          "text": "Poderia me ajudar?"
+        },
+        {
+          "text": "Saudações!"
+        },
+        {
+          "text": "Tudo beleza?"
+        },
+        {
+          "text": "Tudo bem, cara?"
+        },
+        {
+          "text": "Tudo joia?"
+        }
+      ],
+      "description": ""
+    }
+  ],
+  "entities": [
+    {
+      "entity": "Locais",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "ÁGUAS CLARAS",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "ASA NORTE",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "Asa Sul",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "GAMA",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "LAGO AZUL",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "LAGO NORTE",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "MORRO AZUL",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "Nucleo Bandeirante",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "NUCLEO BANDEIRANTES",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "RIACHO FUNDO II",
+          "synonyms": [
+            "Riacho Fundo 2"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "SANTA MARIA SUL",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "SETOR LESTE",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "VILA BURITIS",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "VILA PLANALTO",
+          "synonyms": []
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "Segmento",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "ATM",
+          "synonyms": [
+            "caixa eletrônico"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "FARMACIA",
+          "synonyms": [
+            "drogaria"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "LOJA DE CONVENIENCIA",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "SUPERMERCADO",
+          "synonyms": [
+            "mercado",
+            "mercearia"
+          ]
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "sys-number",
+      "values": [],
+      "fuzzy_match": true
+    }
+  ],
+  "metadata": {
+    "api_version": {
+      "major_version": "v2",
+      "minor_version": "2018-11-08"
+    }
+  },
+  "webhooks": [
+    {
+      "url": "https://05062c6e.us-south.apigw.appdomain.cloud/btc/tecban",
+      "name": "main_webhook",
+      "headers": []
+    }
+  ],
+  "dialog_nodes": [
+    {
+      "type": "standard",
+      "title": "Bem-vindo",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Olá. Como posso te ajudar?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "welcome",
+      "dialog_node": "Bem-vindo"
+    },
+    {
+      "type": "standard",
+      "title": "Em outros casos",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Eu não entendi. Você pode tentar reformular a frase."
+              },
+              {
+                "text": "Você pode reformular sua afirmação? Eu não estou entendendo."
+              },
+              {
+                "text": "Eu não entendi o sentido."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "anything_else",
+      "dialog_node": "Em outros casos",
+      "previous_sibling": "node_3_1598985893363",
+      "disambiguation_opt_out": true
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_7_1598986091965",
+      "context": {
+        "bairro": "@Locais"
+      },
+      "conditions": "@Locais",
+      "event_name": "input",
+      "dialog_node": "handler_10_1598986092004"
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "text": {
+          "values": [
+            "Em qual bairro de Brasília você está?"
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "slot_7_1598986091965",
+      "event_name": "focus",
+      "dialog_node": "handler_2_1598986092004",
+      "previous_sibling": "handler_10_1598986092004"
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_5_1598986234973",
+      "context": {
+        "quantia": "@sys-number"
+      },
+      "conditions": "@sys-number > 2 && @sys-number != 24",
+      "event_name": "input",
+      "dialog_node": "handler_3_1598986234977"
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_7_1598986327955",
+      "context": {
+        "segmento": "@Segmento"
+      },
+      "conditions": "@Segmento",
+      "event_name": "input",
+      "dialog_node": "handler_3_1598986327960"
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "text": {
+          "values": [
+            "Prefere sacar em algum supermercado, farmácia ou loja de conveniência ou qualquer ATM serve?"
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "slot_7_1598986327955",
+      "event_name": "focus",
+      "dialog_node": "handler_6_1598986327960",
+      "previous_sibling": "handler_3_1598986327960"
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "text": {
+          "values": [
+            "Quanto deseja sacar?"
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "slot_5_1598986234973",
+      "event_name": "focus",
+      "dialog_node": "handler_7_1598986234977",
+      "previous_sibling": "handler_3_1598986234977"
+    },
+    {
+      "type": "standard",
+      "title": "Saudação",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Olá, sou assistente virtual capaz te dizer onde está a ATM mais próxima de você desde que esteja em Brasília-DF!"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#Saudacao",
+      "dialog_node": "node_3_1598985893363",
+      "previous_sibling": "node_3_1598985954469"
+    },
+    {
+      "type": "frame",
+      "title": "Saque",
+      "actions": [
+        {
+          "name": "main_webhook",
+          "type": "webhook",
+          "parameters": {
+            "bairro": "$bairro",
+            "quantia": "$quantia",
+            "segmento": "$segmento"
+          },
+          "result_variable": "retorno"
+        }
+      ],
+      "metadata": {
+        "_customization": {
+          "mcr": true
+        }
+      },
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "condition",
+        "dialog_node": "node_9_1598987275840"
+      },
+      "conditions": "#Saque",
+      "dialog_node": "node_3_1598985954469",
+      "previous_sibling": "node_6_1598985768162"
+    },
+    {
+      "type": "standard",
+      "title": "Finalização",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Tchau volte sempre"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#Finalizacao",
+      "dialog_node": "node_6_1598985768162",
+      "previous_sibling": "Bem-vindo"
+    },
+    {
+      "type": "standard",
+      "title": "Limpar",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Obrigado! <? context.clear() ?>"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_3_1598985954469",
+      "conditions": "true",
+      "dialog_node": "node_9_1598987275840"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "text": {
+          "values": [
+            "$retorno.errMsg"
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "node_3_1598985954469",
+      "conditions": "$retorno && $retorno.err",
+      "dialog_node": "response_2_1598986425053",
+      "previous_sibling": "response_4_1598986422945"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "O caixa mais próximo esta localizada no $retorno.local, na rua $retorno.rua, número $retorno.numero com o cep $retorno.cep. $retorno.promocao"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_3_1598985954469",
+      "conditions": "$retorno && !$retorno.err",
+      "dialog_node": "response_4_1598986422945",
+      "previous_sibling": "node_9_1598987275840"
+    },
+    {
+      "type": "slot",
+      "output": {},
+      "parent": "node_3_1598985954469",
+      "variable": "$quantia",
+      "dialog_node": "slot_5_1598986234973",
+      "previous_sibling": "slot_7_1598986091965"
+    },
+    {
+      "type": "slot",
+      "parent": "node_3_1598985954469",
+      "variable": "$bairro",
+      "dialog_node": "slot_7_1598986091965",
+      "previous_sibling": "response_2_1598986425053"
+    },
+    {
+      "type": "slot",
+      "parent": "node_3_1598985954469",
+      "variable": "$segmento",
+      "dialog_node": "slot_7_1598986327955",
+      "previous_sibling": "slot_5_1598986234973"
+    }
+  ],
+  "counterexamples": [
+    {
+      "text": "como assim?"
+    },
+    {
+      "text": "riacho fundo II"
+    },
+    {
+      "text": "setor leste"
+    }
+  ],
+  "system_settings": {
+    "disambiguation": {
+      "prompt": "Você quis dizer:",
+      "enabled": true,
+      "randomize": true,
+      "max_suggestions": 5,
+      "suggestion_text_policy": "title",
+      "none_of_the_above_prompt": "Nenhuma das anteriores"
+    },
+    "system_entities": {
+      "enabled": true
+    },
+    "human_agent_assist": {
+      "prompt": "Você quis dizer:"
+    }
+  },
+  "learning_opt_out": false,
+  "name": "TecBan Oficial",
+  "language": "pt-br",
+  "description": ""
+}

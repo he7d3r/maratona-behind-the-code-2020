@@ -10,3 +10,6 @@
 [submodule "algar-tech/desafio"]
 	path = algar-tech/desafio
 	url = git@github.com:maratonadev-br/desafio-4-2020.git
+[submodule "techban/desafio"]
+	path = techban/desafio
+	url = git@github.com:maratonadev-br/desafio-5-2020.git
