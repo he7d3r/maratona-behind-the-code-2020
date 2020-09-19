@@ -4,3 +4,6 @@
 [submodule "uninassau/desafio"]
 	path = uninassau/desafio
 	url = git@github.com:maratonadev-br/desafio-2-2020.git
+[submodule "fiap/desafio"]
+	path = fiap/desafio
+	url = git@github.com:maratonadev-br/desafio-3-2020.git
