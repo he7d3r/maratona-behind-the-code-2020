@@ -7,3 +7,6 @@
 [submodule "fiap/desafio"]
 	path = fiap/desafio
 	url = git@github.com:maratonadev-br/desafio-3-2020.git
+[submodule "algar-tech/desafio"]
+	path = algar-tech/desafio
+	url = git@github.com:maratonadev-br/desafio-4-2020.git
