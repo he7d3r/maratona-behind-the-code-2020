@@ -13,3 +13,6 @@
 [submodule "techban/desafio"]
 	path = techban/desafio
 	url = git@github.com:maratonadev-br/desafio-5-2020.git
+[submodule "saint-paul-lit/desafio"]
+	path = saint-paul-lit/desafio
+	url = git@github.com:maratonadev-br/desafio-6-2020.git
