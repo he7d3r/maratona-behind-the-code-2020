@@ -19,3 +19,6 @@
 [submodule "tnt/desafio"]
 	path = tnt/desafio
 	url = git@github.com:maratonadev-br/desafio-7-2020.git
+[submodule "fiat-chrysler-automobiles/desafio"]
+	path = fiat-chrysler-automobiles/desafio
+	url = git@github.com:maratonadev-br/desafio-8-2020.git
