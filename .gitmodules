@@ -16,3 +16,6 @@
 [submodule "saint-paul-lit/desafio"]
 	path = saint-paul-lit/desafio
 	url = git@github.com:maratonadev-br/desafio-6-2020.git
+[submodule "tnt/desafio"]
+	path = tnt/desafio
+	url = git@github.com:maratonadev-br/desafio-7-2020.git
