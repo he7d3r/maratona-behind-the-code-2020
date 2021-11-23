@@ -1,0 +1,784 @@
+[
+    {
+        "id": "95901e76.1bd27",
+        "type": "tab",
+        "label": "NLU",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "4ae4d97.88351a8",
+        "type": "http in",
+        "z": "95901e76.1bd27",
+        "name": "",
+        "url": "fiat",
+        "method": "post",
+        "upload": true,
+        "swaggerDoc": "",
+        "x": 120,
+        "y": 140,
+        "wires": [
+            [
+                "3bafe0c1.ce4778",
+                "4d61912e.b933f8"
+            ]
+        ]
+    },
+    {
+        "id": "7df17ba4.cbc97c",
+        "type": "microphone",
+        "z": "95901e76.1bd27",
+        "name": "",
+        "x": 110,
+        "y": 60,
+        "wires": [
+            [
+                "cfdcff5c.11f838"
+            ]
+        ]
+    },
+    {
+        "id": "29f1538.e7909ac",
+        "type": "http response",
+        "z": "95901e76.1bd27",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 1210,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "3bafe0c1.ce4778",
+        "type": "switch",
+        "z": "95901e76.1bd27",
+        "name": "É audio ou texto?",
+        "property": "req.files.length",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "gt",
+                "v": "0",
+                "vt": "str"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 310,
+        "y": 140,
+        "wires": [
+            [
+                "d420672e.682d9",
+                "d231d6cd.3fa7d8"
+            ],
+            [
+                "94aa54d7.0080e8",
+                "3677d29d.efe036"
+            ]
+        ]
+    },
+    {
+        "id": "d420672e.682d9",
+        "type": "debug",
+        "z": "95901e76.1bd27",
+        "name": "AUDIO",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "{\"AUDIO\": msg}",
+        "targetType": "jsonata",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 480,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "94aa54d7.0080e8",
+        "type": "debug",
+        "z": "95901e76.1bd27",
+        "name": "TEXTO",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "{\"TEXTO\": msg}",
+        "targetType": "jsonata",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 480,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "d231d6cd.3fa7d8",
+        "type": "function",
+        "z": "95901e76.1bd27",
+        "name": "Extrair buffer",
+        "func": "// This overwrite the car information, but it is still\n// available at req.body.car\nmsg.payload = msg.req.files[0].buffer;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 630,
+        "y": 100,
+        "wires": [
+            [
+                "cfdcff5c.11f838",
+                "27a00a76.4fbd4e"
+            ]
+        ]
+    },
+    {
+        "id": "cfdcff5c.11f838",
+        "type": "watson-speech-to-text",
+        "z": "95901e76.1bd27",
+        "name": "",
+        "alternatives": 1,
+        "speakerlabels": false,
+        "smartformatting": false,
+        "lang": "pt-BR",
+        "langhidden": "pt-BR",
+        "langcustom": "NoCustomisationSetting",
+        "langcustomhidden": "",
+        "custom-weight": "0.5",
+        "band": "BroadbandModel",
+        "bandhidden": "BroadbandModel",
+        "keywords": "",
+        "keywords-threshold": "0.5",
+        "word-confidence": false,
+        "password": "",
+        "apikey": "__removido__",
+        "payload-response": true,
+        "streaming-mode": false,
+        "streaming-mute": true,
+        "auto-connect": false,
+        "discard-listening": false,
+        "disable-precheck": false,
+        "service-endpoint": "",
+        "x": 820,
+        "y": 60,
+        "wires": [
+            [
+                "9229c4ed.d27098",
+                "3677d29d.efe036"
+            ]
+        ]
+    },
+    {
+        "id": "9229c4ed.d27098",
+        "type": "debug",
+        "z": "95901e76.1bd27",
+        "name": "STT",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "{\"STT\": msg}",
+        "targetType": "jsonata",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1010,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "3677d29d.efe036",
+        "type": "function",
+        "z": "95901e76.1bd27",
+        "name": "Configurar NLU",
+        "func": "if ( msg.req && msg.req.body.text ) {\n    msg.payload = msg.req.body.text;\n} else if ( typeof msg.payload == \"string\" ) {\n    msg.payload = msg.payload;\n} else {\n    // This should not happen\n    return [null, msg];\n}\nmsg.nlu_options = {\n    \"entity_model\":\"__removido__\",\n    // \"entity_model\":\"__removido__\",\n    \"language\": \"pt\"\n};\nreturn [msg, null];",
+        "outputs": 2,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 1020,
+        "y": 140,
+        "wires": [
+            [
+                "60e09398.34023c",
+                "fd782e11.8abf"
+            ],
+            [
+                "56080fa8.00ecf8",
+                "b55f8f57.fd5378"
+            ]
+        ]
+    },
+    {
+        "id": "60e09398.34023c",
+        "type": "debug",
+        "z": "95901e76.1bd27",
+        "name": "TEXTO-OU-AUDIO",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "{\"TEXTO-OU-AUDIO\": msg}",
+        "targetType": "jsonata",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 850,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "fd782e11.8abf",
+        "type": "natural-language-understanding",
+        "z": "95901e76.1bd27",
+        "name": "",
+        "categories": false,
+        "limitcategories": "3",
+        "concepts": false,
+        "maxconcepts": "8",
+        "doc-emotion": false,
+        "doc-emotion-target": "",
+        "doc-sentiment": true,
+        "doc-sentiment-target": "",
+        "entity": true,
+        "entity-emotion": false,
+        "entity-sentiment": true,
+        "maxentities": "50",
+        "keyword": false,
+        "keyword-emotion": false,
+        "keyword-sentiment": false,
+        "maxkeywords": "50",
+        "metadata": false,
+        "relation": false,
+        "semantic": false,
+        "semantic-entities": false,
+        "semantic-keywords": false,
+        "maxsemantics": "50",
+        "limittextcharacters": "0",
+        "syntax": false,
+        "syntax-sentences": false,
+        "syntax-tokens-lemma": false,
+        "syntax-tokens-pos": false,
+        "service-endpoint": "",
+        "x": 200,
+        "y": 340,
+        "wires": [
+            [
+                "1a94edea.39903a",
+                "51371888.22384",
+                "9b732799.c9216"
+            ]
+        ]
+    },
+    {
+        "id": "ddaa8e20.f6f0b8",
+        "type": "function",
+        "z": "95901e76.1bd27",
+        "name": "Formatar e recomendar",
+        "func": "let entities = msg.features.entities.map(entity => ({\n    entity: entity.type,\n    sentiment: entity.sentiment.score,\n    mention: entity.text\n}));\nmsg.payload = {\n    \"recommendation\": msg.payload,\n    \"entities\": entities\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 990,
+        "y": 460,
+        "wires": [
+            [
+                "29f1538.e7909ac",
+                "1eaeffed.923e9"
+            ]
+        ]
+    },
+    {
+        "id": "1eaeffed.923e9",
+        "type": "debug",
+        "z": "95901e76.1bd27",
+        "name": "OUT",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1210,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "4d61912e.b933f8",
+        "type": "debug",
+        "z": "95901e76.1bd27",
+        "name": "POST",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "{\"POST\": msg}",
+        "targetType": "jsonata",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 270,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "27a00a76.4fbd4e",
+        "type": "debug",
+        "z": "95901e76.1bd27",
+        "name": "BUFFER",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "{\"BUFFER\": msg}",
+        "targetType": "jsonata",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 800,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "1a94edea.39903a",
+        "type": "debug",
+        "z": "95901e76.1bd27",
+        "name": "NLU",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "{\"NLU\": msg}",
+        "targetType": "jsonata",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 450,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "56080fa8.00ecf8",
+        "type": "function",
+        "z": "95901e76.1bd27",
+        "name": "Não recomendar",
+        "func": "msg.payload = {\n  \"recommendation\": \"\",\n  \"entities\": []\n};\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 930,
+        "y": 380,
+        "wires": [
+            [
+                "29f1538.e7909ac",
+                "1eaeffed.923e9"
+            ]
+        ]
+    },
+    {
+        "id": "b55f8f57.fd5378",
+        "type": "debug",
+        "z": "95901e76.1bd27",
+        "name": "SEM-TXT-NEM-AUDIO",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "{\"SEM-TEXTO-NEM-AUDIO\": msg}",
+        "targetType": "jsonata",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1130,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "88dae2ab.2fead",
+        "type": "function",
+        "z": "95901e76.1bd27",
+        "name": "Identificar entidade prioritária",
+        "func": "let priorities = {\n    'SEGURANCA': 1,\n    'CONSUMO': 2,\n    'DESEMPENHO':3,\n    'MANUTENCAO': 4,\n    'CONFORTO': 5,\n    'DESIGN': 6,\n    'ACESSORIOS': 7\n};\nlet entities = Object.keys(priorities);\n// let top = Math.min(...msg.payload.map(x => priorities[x]));\nlet top = Math.min(...msg.payload.map(x => priorities[x.type]));\nmsg.payload = entities.find(key => priorities[key] === top);\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 740,
+        "y": 600,
+        "wires": [
+            [
+                "27161af5.e2c3b6",
+                "90337924.8abe68"
+            ]
+        ]
+    },
+    {
+        "id": "27161af5.e2c3b6",
+        "type": "function",
+        "z": "95901e76.1bd27",
+        "name": "Obter top 2 da entidade",
+        "func": "let bestModelsByEntity = {\n    \"ACESSORIOS\": [\"DUCATO\", \"CRONOS\"],\n    \"CONFORTO\": [\"CRONOS\", \"MAREA\"],\n    \"CONSUMO\": [\"TORO\", \"FIORINO\"],\n    \"DESEMPENHO\": [\"MAREA\", \"DUCATO\"],\n    \"DESIGN\": [\"CRONOS\", \"ARGO\"],\n    \"MANUTENCAO\": [\"TORO\", \"FIORINO\"],\n    \"SEGURANCA\": [\"CRONOS\", \"FIAT 500\"]\n};\nmsg.payload = bestModelsByEntity[msg.payload];\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 1130,
+        "y": 720,
+        "wires": [
+            [
+                "5214a2fb.0a866c",
+                "f524faef.858cf8"
+            ]
+        ]
+    },
+    {
+        "id": "5214a2fb.0a866c",
+        "type": "function",
+        "z": "95901e76.1bd27",
+        "name": "Sugerir 1º carro diferente do atual",
+        "func": "car = msg.req && msg.req.body && msg.req.body.car || \"\";\nmsg.payload = msg.payload.find(x => x !== car);\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 960,
+        "y": 500,
+        "wires": [
+            [
+                "ddaa8e20.f6f0b8",
+                "28a2432b.a5e414"
+            ]
+        ]
+    },
+    {
+        "id": "9b732799.c9216",
+        "type": "debug",
+        "z": "95901e76.1bd27",
+        "name": "SENTIMENTO GERAL",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "features.sentiment.document.label",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 500,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "51371888.22384",
+        "type": "switch",
+        "z": "95901e76.1bd27",
+        "name": "Sentimento geral é positivo?",
+        "property": "features.sentiment.document.label",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "positive",
+                "vt": "str"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 520,
+        "y": 380,
+        "wires": [
+            [
+                "56080fa8.00ecf8"
+            ],
+            [
+                "4e93dc49.043b84"
+            ]
+        ]
+    },
+    {
+        "id": "4e93dc49.043b84",
+        "type": "function",
+        "z": "95901e76.1bd27",
+        "name": "Ordenar",
+        "func": "msg.payload = msg.features.entities.sort((a, b) => a.sentiment.score - b.sentiment.score);\nreturn msg;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 120,
+        "y": 440,
+        "wires": [
+            [
+                "a6ae9221.535ce"
+            ]
+        ]
+    },
+    {
+        "id": "731944e3.6b36b4",
+        "type": "switch",
+        "z": "95901e76.1bd27",
+        "name": "Há empate?",
+        "property": "payload[0].sentiment.score",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "gte",
+                "v": "msg.payload[1].sentiment.score-0.1",
+                "vt": "jsonata"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 490,
+        "y": 800,
+        "wires": [
+            [
+                "18e56054.14844",
+                "88dae2ab.2fead"
+            ],
+            [
+                "2f4b73c8.a217e4",
+                "c5dec8c2.d8ce7"
+            ]
+        ]
+    },
+    {
+        "id": "18e56054.14844",
+        "type": "debug",
+        "z": "95901e76.1bd27",
+        "name": "SIM",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "{\"EMPATOU; DIF=\": msg.payload[1].sentiment.score-msg.payload[0].sentiment.score}",
+        "targetType": "jsonata",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 670,
+        "y": 560,
+        "wires": []
+    },
+    {
+        "id": "2f4b73c8.a217e4",
+        "type": "debug",
+        "z": "95901e76.1bd27",
+        "name": "NÃO",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "{\"NÃO EMPATOU; DIF=\": msg.payload[1].sentiment.score-msg.payload[0].sentiment.score}",
+        "targetType": "jsonata",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 730,
+        "y": 760,
+        "wires": []
+    },
+    {
+        "id": "c5dec8c2.d8ce7",
+        "type": "function",
+        "z": "95901e76.1bd27",
+        "name": "Pior entidade?",
+        "func": "msg.payload = msg.payload[0].type;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 780,
+        "y": 720,
+        "wires": [
+            [
+                "27161af5.e2c3b6",
+                "8300c392.30fd4"
+            ]
+        ]
+    },
+    {
+        "id": "81c2c84d.73e28",
+        "type": "switch",
+        "z": "95901e76.1bd27",
+        "name": "0, 1 ou mais entidades negativas?",
+        "property": "payload.length",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "0",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "1",
+                "vt": "str"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 3,
+        "x": 200,
+        "y": 720,
+        "wires": [
+            [
+                "56080fa8.00ecf8",
+                "7b94c523.ef1534"
+            ],
+            [
+                "c5dec8c2.d8ce7",
+                "48029e20.1cb43"
+            ],
+            [
+                "731944e3.6b36b4",
+                "fccda548.e24b7"
+            ]
+        ]
+    },
+    {
+        "id": "a6ae9221.535ce",
+        "type": "function",
+        "z": "95901e76.1bd27",
+        "name": "Remover: >= 0, MODELO",
+        "func": "msg.payload = msg.payload.filter(entity => (entity.sentiment.score < 0 && entity.type !== \"MODELO\"));\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 310,
+        "y": 440,
+        "wires": [
+            [
+                "81c2c84d.73e28"
+            ]
+        ]
+    },
+    {
+        "id": "7b94c523.ef1534",
+        "type": "debug",
+        "z": "95901e76.1bd27",
+        "name": "0",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "{\"ZERO\": msg.payload}",
+        "targetType": "jsonata",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 470,
+        "y": 640,
+        "wires": []
+    },
+    {
+        "id": "48029e20.1cb43",
+        "type": "debug",
+        "z": "95901e76.1bd27",
+        "name": "1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "{\"UM\": msg.payload}",
+        "targetType": "jsonata",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 470,
+        "y": 700,
+        "wires": []
+    },
+    {
+        "id": "fccda548.e24b7",
+        "type": "debug",
+        "z": "95901e76.1bd27",
+        "name": "2+",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "{\"DOIS+\": msg.payload}",
+        "targetType": "jsonata",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 470,
+        "y": 760,
+        "wires": []
+    },
+    {
+        "id": "8300c392.30fd4",
+        "type": "debug",
+        "z": "95901e76.1bd27",
+        "name": "PIOR",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "{\"PIOR\": msg.payload}",
+        "targetType": "jsonata",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 930,
+        "y": 740,
+        "wires": []
+    },
+    {
+        "id": "90337924.8abe68",
+        "type": "debug",
+        "z": "95901e76.1bd27",
+        "name": "PRIORIDADE",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "{\"PRIORIDADE\": msg.payload}",
+        "targetType": "jsonata",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 800,
+        "y": 640,
+        "wires": []
+    },
+    {
+        "id": "f524faef.858cf8",
+        "type": "debug",
+        "z": "95901e76.1bd27",
+        "name": "TOP2",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "{\"TOP2\": msg.payload}",
+        "targetType": "jsonata",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1170,
+        "y": 600,
+        "wires": []
+    },
+    {
+        "id": "28a2432b.a5e414",
+        "type": "debug",
+        "z": "95901e76.1bd27",
+        "name": "CARRO",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "{\"CARRO\": msg.payload}",
+        "targetType": "jsonata",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1200,
+        "y": 500,
+        "wires": []
+    }
+]
