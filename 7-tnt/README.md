@@ -7,12 +7,12 @@ A proposta do desafio da TNT encontra-se no submódulo "desafio".
 ## Solução
 
 Para a solução do desafio na plataforma da *IBM Cloud*, foi utilizado o
-*Node-RED* (ver [flows.json](solução/flows.json)) para coletar documentos em
-formato JSON de um dispositivo IOT da TNT via protocolo MQTT e armazená-los em
-um banco de dados *NoSQL* (o *Cloudant*):
+*Node-RED* (ver [node-red-flows.json](solução/node-red-flows.json)) para coletar
+documentos em formato JSON de um dispositivo IOT da TNT via protocolo MQTT e
+armazená-los em um banco de dados *NoSQL* (o *Cloudant*):
 
 <div align="center">
-<img width="50%" src="./solução/screenshot-node-red.png" alt='Screenshot do fluxo do Node-RED'>
+<img width="50%" src="./solução/node-red-screenshot.png" alt='Screenshot do fluxo do Node-RED'>
 </div>
 
 Depois, os dados foram explorados em um *Jupyter notebook* (ver
