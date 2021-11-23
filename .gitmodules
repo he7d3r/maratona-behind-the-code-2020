@@ -1,24 +1,24 @@
 [submodule "cocamar/desafio"]
-	path = cocamar/desafio
+	path = 1-cocamar/desafio
 	url = git@github.com:maratonadev-br/desafio-1-2020.git
 [submodule "uninassau/desafio"]
-	path = uninassau/desafio
+	path = 2-uninassau/desafio
 	url = git@github.com:maratonadev-br/desafio-2-2020.git
 [submodule "fiap/desafio"]
-	path = fiap/desafio
+	path = 3-fiap/desafio
 	url = git@github.com:maratonadev-br/desafio-3-2020.git
 [submodule "algar-tech/desafio"]
-	path = algar-tech/desafio
+	path = 4-algar-tech/desafio
 	url = git@github.com:maratonadev-br/desafio-4-2020.git
-[submodule "techban/desafio"]
-	path = tecban/desafio
+[submodule "tecban/desafio"]
+	path = 5-tecban/desafio
 	url = git@github.com:maratonadev-br/desafio-5-2020.git
 [submodule "saint-paul-lit/desafio"]
-	path = saint-paul-lit/desafio
+	path = 6-saint-paul-lit/desafio
 	url = git@github.com:maratonadev-br/desafio-6-2020.git
 [submodule "tnt/desafio"]
-	path = tnt/desafio
+	path = 7-tnt/desafio
 	url = git@github.com:maratonadev-br/desafio-7-2020.git
 [submodule "fiat-chrysler-automobiles/desafio"]
-	path = fiat-chrysler-automobiles/desafio
+	path = 8-fiat-chrysler-automobiles/desafio
 	url = git@github.com:maratonadev-br/desafio-8-2020.git
